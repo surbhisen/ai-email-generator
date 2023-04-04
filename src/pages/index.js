@@ -10,7 +10,7 @@ export default function Home() {
   const handleClick = async (e) => {
     e.preventDefault();
     if (email === "") return alert("Please enter your email");
-    const res = await fetch("http://localhost:3000/api/generateanswer", {
+    const res = await fetch("/api/generateanswer", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
