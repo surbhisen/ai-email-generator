@@ -7,6 +7,9 @@ const Configuration1 = new Configuration({
 const openai = new OpenAIApi(Configuration1);
 
 export default async function handler( req, res ){
+
+    if(req.method !== 'POST')return res.json({text: "only post is allowed", status: 402});
+    
     const prompt = req.body;
 
     if(!prompt || prompt === ''){
